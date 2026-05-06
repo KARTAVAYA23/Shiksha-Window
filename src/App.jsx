@@ -148,9 +148,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-sky-400 focus:outline-none"
+              className="p-2 -mr-2 text-slate-300 hover:text-sky-400 focus:outline-none transition-colors"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
             </button>
           </div>
         </div>
@@ -195,7 +195,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-transparent">
       {/* Background Orbs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
       <div className="absolute -left-40 top-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -396,7 +396,7 @@ const Scholarship = () => {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
 
               {/* Premium Header */}
-              <div className="relative shrink-0 px-8 pt-7 pb-5 border-b border-white/10">
+              <div className="relative shrink-0 px-5 sm:px-8 pt-7 pb-5 border-b border-white/10">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-emerald-400 flex items-center justify-center shadow-lg shadow-sky-500/30">
@@ -420,7 +420,7 @@ const Scholarship = () => {
                 </div>
               </div>
 
-              <div className="overflow-y-auto px-8 py-6 relative z-10">
+              <div className="overflow-y-auto px-5 sm:px-8 py-6 relative z-10">
                 {/* ── STEP 1 ── */}
                 {step === 1 && (
                   <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
@@ -832,9 +832,9 @@ const Courses = () => {
   ];
 
   return (
-    <section id="courses" className="py-24 relative bg-transparent overflow-hidden">
+    <section id="courses" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
       {/* Decorative background orb */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="hidden md:block absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -989,9 +989,9 @@ const Courses = () => {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative bg-transparent overflow-hidden">
+    <section id="about" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
       {/* Decorative Orbs */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="hidden md:block absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -1142,7 +1142,7 @@ const Faculties = () => {
   ];
 
   return (
-    <section id="faculties" className="py-24 relative bg-transparent overflow-hidden">
+    <section id="faculties" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Our Mentors</h2>
@@ -1249,10 +1249,10 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-24 relative bg-transparent overflow-hidden">
+    <section id="achievements" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
       {/* Decorative background orbs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -1343,8 +1343,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 relative bg-transparent overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/5 blur-[150px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
+    <section id="testimonials" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/5 blur-[150px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -1422,9 +1422,9 @@ const Gallery = () => {
   const preview = galleryItems.slice(0, 4);
 
   return (
-    <section id="gallery" className="py-24 relative bg-transparent overflow-hidden">
+    <section id="gallery" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
       {/* Decorative orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -1638,11 +1638,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%)' }}>
+    <section id="contact" className="py-16 md:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0f172a 100%)' }}>
       {/* Decorative orbs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[150px] rounded-full pointer-events-none" />
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none" />
 
@@ -1942,8 +1942,8 @@ const FAQs = () => {
   ];
 
   return (
-    <section id="faqs" className="py-24 relative bg-transparent overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
+    <section id="faqs" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none -z-10 animate-pulse"></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block bg-sky-500/10 text-sky-400 font-bold text-xs px-5 py-2 rounded-full uppercase tracking-widest mb-4 border border-sky-400/20">Have Questions?</span>
@@ -2048,10 +2048,10 @@ const PageLoader = () => {
 
 const Counsellor = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-slate-950">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-slate-950">
       {/* Background Ambience */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none mix-blend-overlay"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -2179,7 +2179,7 @@ const SaveSoil = () => {
   return (
     <section className="py-16 relative overflow-hidden bg-slate-950">
       {/* Background elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-[100%] pointer-events-none" />
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/10 blur-[120px] rounded-[100%] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay pointer-events-none"></div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
@@ -2254,7 +2254,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-sky-500/30 font-sans relative">
+    <div className="min-h-screen selection:bg-sky-500/30 font-sans relative overflow-x-hidden w-full">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-400 via-blue-500 to-sky-400 z-[100] origin-left"
         style={{ scaleX }}
