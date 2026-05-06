@@ -2151,7 +2151,7 @@ const Counsellor = () => {
                     </div>
                     <div>
                       <p className="text-[8px] sm:text-[10px] text-slate-400 font-black uppercase tracking-widest mb-0.5 sm:mb-1">Qualifications</p>
-                      <p className="text-white font-bold text-[10px] sm:text-sm leading-tight">Student Counsellor</p>
+                      <p className="text-white font-bold text-[10px] sm:text-sm leading-tight">Post 🎓 Graduate In Psychology</p>
                       <p className="text-white font-bold text-[10px] sm:text-sm leading-tight mt-0.5 sm:mt-1">M.phill (RINPAS)</p>
                     </div>
                   </div>
