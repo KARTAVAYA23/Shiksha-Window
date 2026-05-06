@@ -631,42 +631,42 @@ const HomeTutoring = () => {
   const lbl = "block text-xs font-bold text-amber-200 mb-1.5 uppercase tracking-wider";
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16 relative z-20">
+    <div className="w-full relative z-20">
       <motion.div
         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }} transition={{ duration: 0.6 }}
-        className="w-full relative group overflow-hidden rounded-[2rem] md:rounded-[3rem] p-[2px]"
+        className="w-full relative group overflow-hidden rounded-[2rem] p-[2px] h-full flex flex-col"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 animate-shine blur-[2px] opacity-80 group-hover:opacity-100 transition-opacity"></div>
-        <div className="relative bg-slate-900 px-6 py-8 md:px-12 md:py-10 rounded-[2rem] md:rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden border border-white/10">
+        <div className="relative h-full bg-slate-900 px-6 py-8 rounded-[2rem] flex flex-col items-center justify-center gap-5 overflow-hidden border border-white/10 text-center">
           
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none mix-blend-overlay"></div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] pointer-events-none"></div>
 
-          <div className="flex items-center gap-6 relative z-10 w-full md:w-auto justify-center md:justify-start">
-            <div className="hidden sm:flex w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 p-[2px] shrink-0 shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:scale-110 transition-transform duration-500">
-              <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
-                <BookOpen className="h-10 w-10 text-amber-400" />
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <div className="inline-block bg-amber-500/20 text-amber-300 text-[10px] font-black px-3 py-1 rounded-full border border-amber-400/20 uppercase tracking-widest mb-3 shadow-inner">
-                Personalized Learning
-              </div>
-              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-2 font-heading tracking-tight">
-                HOME <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">TUTORING</span> AVAILABLE
-              </h3>
-              <p className="text-slate-300 text-sm md:text-base font-medium max-w-lg mx-auto md:mx-0">Get expert guidance at your doorstep! Tailored one-on-one sessions to boost your child's confidence and scores.</p>
+          <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 p-[2px] shrink-0 shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:scale-110 transition-transform duration-500 relative z-10">
+            <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+              <BookOpen className="h-8 w-8 text-amber-400" />
             </div>
           </div>
-          <div className="shrink-0 relative z-10 w-full md:w-auto mt-4 md:mt-0">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="w-full md:w-auto bg-gradient-to-r from-amber-500 to-orange-600 text-white font-extrabold px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] hover:-translate-y-1 cursor-pointer text-lg group/btn"
-            >
-              APPLY NOW <ChevronRight className="h-6 w-6 group-hover/btn:translate-x-1 transition-transform" />
-            </button>
+
+          <div className="relative z-10">
+            <div className="inline-block bg-amber-500/20 text-amber-300 text-[10px] font-black px-3 py-1 rounded-full border border-amber-400/20 uppercase tracking-widest mb-3 shadow-inner">
+              1-ON-1 GUIDANCE
+            </div>
+            <h3 className="text-3xl font-extrabold text-white mb-2 font-heading tracking-tight leading-tight">
+              HOME <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">TUTORING</span>
+            </h3>
+            <p className="text-slate-300 text-sm font-medium max-w-[250px] mx-auto leading-relaxed">
+              Expert teachers at your doorstep. Boost your scores today!
+            </p>
           </div>
+
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="mt-2 w-full max-w-[220px] relative z-10 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-extrabold px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] hover:-translate-y-1 cursor-pointer text-sm md:text-base group/btn"
+          >
+            APPLY NOW <ChevronRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+          </button>
         </div>
       </motion.div>
 
@@ -1125,7 +1125,7 @@ const Faculties = () => {
     {
       name: "Amit Kumar Prajapati (Junior Wing)",
       role: "Computer Faculty",
-      experience: "Specialist",
+      experience: "4 Years",
       qualifications: [
         "B.C.A. in Computer Applications (General), Dr. Shyama Prasad Mukherjee University, Ranchi"
       ],
@@ -1168,6 +1168,7 @@ const Faculties = () => {
                 <img 
                   src={faculty.image} 
                   alt={faculty.name} 
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   onError={(e) => {
                     e.target.onerror = null;
@@ -1307,7 +1308,7 @@ const Achievements = () => {
               >
                 <div className="shrink-0 relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-white/10 group-hover:border-sky-400/50 transition-colors duration-500 shadow-xl shadow-black/50">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10 pointer-events-none opacity-60 group-hover:opacity-0 transition-opacity"></div>
-                  <img src={topper.photo || topper.fallbackImage} alt={topper.name} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                  <img src={topper.photo || topper.fallbackImage} alt={topper.name} loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 
                 <div className="flex-1 min-w-0">
@@ -1337,8 +1338,8 @@ const Testimonials = () => {
     { src: 'T2.mp4', name: 'Sagar Kr. Mahto', details: 'Pursuing B.Tech in Aerospace Engineering from SRM University' },
     { src: 'T3.mp4', name: 'Abhishek Mishra', details: 'Proud Achiever' },
     { src: 'T4.mp4', name: 'Akash Kumar Sahu', details: 'Outstanding Performance' },
-    { src: 'T5.mp4', name: 'Saket Kr. Sahu', details: 'NIT Nagaland' },
-    { src: 'T6.mp4', name: 'Savrottam Bhagat', details: 'Proud Achiever' }
+    { src: 'T5 updated.mp4', name: 'Saket Kr. Sahu', details: 'NIT Nagaland' },
+    { src: 'T6 updated.mp4', name: 'Savrottam Bhagat', details: 'Proud Achiever' }
   ];
 
   return (
@@ -1366,6 +1367,7 @@ const Testimonials = () => {
                 <video 
                   src={`./${testi.src}`}
                   controls
+                  playsInline
                   preload="metadata"
                   className="w-full h-full object-contain brightness-110"
                 />
@@ -1389,7 +1391,7 @@ const GalleryItem = ({ item, onClick }) => (
     {item.type === 'video' ? (
       <video src={item.src} autoPlay loop muted playsInline className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
     ) : (
-      <img src={item.src} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
+      <img src={item.src} alt={item.title} loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 pointer-events-none" />
     )}
     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="absolute bottom-0 left-0 p-4 translate-y-3 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -1691,24 +1693,6 @@ const Contact = () => {
               </motion.div>
             ))}
 
-            {/* Google Maps */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}
-              className="rounded-2xl overflow-hidden border border-white/10 shadow-xl"
-            >
-              <div className="bg-white/5 px-4 py-3 flex items-center gap-2 border-b border-white/10">
-                <MapPin className="h-4 w-4 text-emerald-400" />
-                <span className="text-sm font-bold text-white/70">Find Us on Map</span>
-              </div>
-              <iframe
-                title="Shiksha Window Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.056!2d85.4398!3d23.4128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBIT+Mesra%2C+Ranchi%2C+Jharkhand!5e0!3m2!1sen!2sin!4v1600000000000"
-                width="100%" height="200"
-                style={{ border: 0, display: 'block', filter: 'invert(90%) hue-rotate(180deg)' }}
-                allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-              />
-            </motion.div>
           </motion.div>
 
           {/* RIGHT — Form */}
@@ -1802,6 +1786,31 @@ const Contact = () => {
               )}
             </div>
           </motion.div>
+        </div>
+
+        {/* Map & Home Tutoring Banner Side by Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-12 items-stretch">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-[2rem] overflow-hidden border border-white/10 shadow-xl flex flex-col min-h-[300px]"
+          >
+            <div className="bg-white/5 px-6 py-4 flex items-center gap-3 border-b border-white/10 shrink-0">
+              <MapPin className="h-5 w-5 text-emerald-400" />
+              <span className="text-base font-bold text-white">Find Us on Map</span>
+            </div>
+            <iframe
+              title="Shiksha Window Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.056!2d85.4398!3d23.4128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBIT+Mesra%2C+Ranchi%2C+Jharkhand!5e0!3m2!1sen!2sin!4v1600000000000"
+              width="100%" height="100%"
+              style={{ border: 0, display: 'block', filter: 'invert(90%) hue-rotate(180deg)', flexGrow: 1 }}
+              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
+
+          <div className="flex items-center h-full">
+            <HomeTutoring />
+          </div>
         </div>
       </div>
     </section>
@@ -2077,11 +2086,12 @@ const Counsellor = () => {
                 <img 
                   src={ashishPhoto} 
                   alt="Ashish Kumar Sahoo" 
+                  loading="lazy"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-2xl">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-2xl text-center">
                     <h3 className="text-white font-extrabold text-xl mb-1">Ashish Kumar Sahoo</h3>
                     <p className="text-purple-300 font-bold text-sm">Student Counsellor</p>
                   </div>
@@ -2258,7 +2268,6 @@ function App() {
       <main>
         <Hero />
         <Scholarship />
-        <HomeTutoring />
         <Courses />
         <About />
         <Faculties />
