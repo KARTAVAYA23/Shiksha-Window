@@ -914,8 +914,9 @@ const Courses = () => {
         </div>
       </div>
 
-      <AnimatePresence>
-        {selectedCourse && (
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {selectedCourse && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -927,7 +928,7 @@ const Courses = () => {
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 20 }}
-              className="relative bg-slate-900 rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] border border-white/10"
+              className="relative bg-slate-900 rounded-3xl w-full max-w-2xl overflow-hidden shadow-xl md:shadow-2xl flex flex-col max-h-[90vh] border border-white/10 will-change-transform"
             >
               {/* Modal Header */}
               <div className={`p-8 relative overflow-hidden bg-gradient-to-r ${selectedCourse.gradient}`}>
@@ -939,7 +940,7 @@ const Courses = () => {
                   <X className="h-6 w-6" />
                 </button>
                 <div className="relative z-10 flex items-center gap-4">
-                  <div className="bg-white/20 p-4 rounded-2xl backdrop-blur-sm shadow-inner flex items-center justify-center">
+                  <div className="bg-white/20 p-4 rounded-2xl md:backdrop-blur-sm shadow-inner flex items-center justify-center">
                     {selectedCourse.icon}
                   </div>
                   <div className="text-white">
@@ -1005,7 +1006,9 @@ const Courses = () => {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+    )}
     </section>
   );
 };
