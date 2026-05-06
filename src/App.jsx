@@ -1233,9 +1233,9 @@ const Faculties = () => {
 
 const Achievements = () => {
   const stats = [
-    { title: "Selection Rate", value: <AnimatedCounter from={0} to={85} suffix="%" />, icon: <Award className="h-8 w-8" /> },
-    { title: "Top 100 Ranks", value: <AnimatedCounter from={0} to={24} suffix="+" />, icon: <Star className="h-8 w-8" /> },
-    { title: "Expert Faculty", value: <AnimatedCounter from={0} to={15} suffix="+" />, icon: <Users className="h-8 w-8" /> },
+    { title: "Selection Rate", value: <AnimatedCounter from={0} to={85} suffix="%" />, icon: <Award className="h-6 w-6 md:h-8 md:w-8" /> },
+    { title: "Top 100 Ranks", value: <AnimatedCounter from={0} to={24} suffix="+" />, icon: <Star className="h-6 w-6 md:h-8 md:w-8" /> },
+    { title: "Expert Faculty", value: <AnimatedCounter from={0} to={15} suffix="+" />, icon: <Users className="h-6 w-6 md:h-8 md:w-8" /> },
   ];
 
   const toppers = [
@@ -1269,19 +1269,19 @@ const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-10 rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-2xl backdrop-blur-md"
+              className="relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-2xl backdrop-blur-md"
             >
               {/* Internal Hover Glow */}
               <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10">
-                <div className="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-white/5 border border-white/10 group-hover:border-sky-400/50 text-sky-400 mb-8 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.2)] group-hover:scale-110">
+                <div className="inline-flex items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 group-hover:border-sky-400/50 text-sky-400 mb-6 md:mb-8 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.2)] group-hover:scale-110">
                   {stat.icon}
                 </div>
-                <div className="text-6xl font-extrabold font-heading mb-3 text-white group-hover:text-sky-400 transition-all duration-500">
+                <div className="text-5xl md:text-6xl font-extrabold font-heading mb-2 md:mb-3 text-white group-hover:text-sky-400 transition-all duration-500">
                   {stat.value}
                 </div>
-                <div className="text-slate-400 group-hover:text-sky-400 font-bold uppercase tracking-[0.2em] text-xs transition-colors duration-500">
+                <div className="text-slate-400 group-hover:text-sky-400 font-bold uppercase tracking-widest md:tracking-[0.2em] text-xs transition-colors duration-500">
                   {stat.title}
                 </div>
               </div>
