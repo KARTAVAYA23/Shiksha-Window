@@ -170,8 +170,18 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-slate-300 hover:text-sky-400 hover:bg-white/5 block px-3 py-2 rounded-md text-base font-bold transition-all"
-                  onClick={() => setIsOpen(false)}
+                  className="text-slate-300 hover:text-sky-400 hover:bg-white/5 block px-3 py-2 rounded-md text-base font-bold transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    const targetId = link.href.replace('#', '');
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                      setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                      }, 50);
+                    }
+                  }}
                 >
                   {link.name}
                 </a>
@@ -179,7 +189,16 @@ const Navbar = () => {
               <a 
                 href="#contact" 
                 className="w-full flex justify-center items-center gap-2 mt-4 bg-sky-500 hover:bg-sky-600 text-white px-5 py-3 rounded-xl text-base font-bold shadow-lg shadow-sky-500/30"
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  const targetElement = document.getElementById('contact');
+                  if (targetElement) {
+                    setTimeout(() => {
+                      targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                  }
+                }}
               >
                 Get Free Counselling
               </a>
@@ -296,7 +315,7 @@ const Hero = () => {
 const EDU_ICONS = ['📚','🎓','✏️','🔬','🏆','📐','🌟','🧮','📖','🎯'];
 
 const FloatingIcon = ({ icon, style }) => (
-  <div className="absolute text-2xl select-none pointer-events-none animate-bounce opacity-20" style={style}>{icon}</div>
+  <div className="hidden md:block absolute text-2xl select-none pointer-events-none animate-bounce opacity-20" style={style}>{icon}</div>
 );
 
 const Scholarship = () => {
@@ -377,7 +396,7 @@ const Scholarship = () => {
               initial={{ opacity: 0, scale: 0.85, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.85, y: 30 }}
               transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-              className="relative w-full max-w-2xl z-10 overflow-hidden flex flex-col max-h-[92vh] rounded-[2rem] shadow-2xl"
+              className="relative w-full max-w-2xl z-10 overflow-hidden flex flex-col max-h-[92vh] rounded-[2rem] shadow-xl md:shadow-2xl will-change-transform"
               style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}
             >
               {/* Floating education icons */}
@@ -392,8 +411,8 @@ const Scholarship = () => {
               ))}
 
               {/* Glowing orbs */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-[80px] rounded-full pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
+              <div className="hidden md:block absolute top-0 right-0 w-64 h-64 bg-sky-500/10 blur-[80px] rounded-full pointer-events-none" />
+              <div className="hidden md:block absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
 
               {/* Premium Header */}
               <div className="relative shrink-0 px-5 sm:px-8 pt-7 pb-5 border-b border-white/10">
@@ -1490,7 +1509,7 @@ const Gallery = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-lg"
+              className="absolute inset-0 bg-slate-950/90 md:backdrop-blur-lg"
               onClick={() => setShowModal(false)}
             />
             <motion.div
@@ -1498,7 +1517,7 @@ const Gallery = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
               transition={{ type: 'spring', damping: 26, stiffness: 280 }}
-              className="relative w-full max-w-6xl max-h-[90vh] bg-slate-900 rounded-[2.5rem] shadow-2xl overflow-hidden z-10 flex flex-col border border-white/10"
+              className="relative w-full max-w-6xl max-h-[90vh] bg-slate-900 rounded-[2.5rem] shadow-xl md:shadow-2xl overflow-hidden z-10 flex flex-col border border-white/10 will-change-transform"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between px-8 py-6 border-b border-white/5 shrink-0 bg-slate-900/50">
@@ -1540,7 +1559,7 @@ const Gallery = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/95 backdrop-blur-xl"
+              className="absolute inset-0 bg-slate-950/95 md:backdrop-blur-xl"
               onClick={() => setSelectedMedia(null)}
             />
             
@@ -1556,12 +1575,12 @@ const Gallery = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative z-10 w-full max-w-5xl max-h-[90vh] flex flex-col items-center justify-center pointer-events-none"
+              className="relative z-10 w-full max-w-5xl max-h-[90vh] flex flex-col items-center justify-center pointer-events-none will-change-transform"
             >
               {selectedMedia.type === 'video' ? (
-                <video src={selectedMedia.src} autoPlay controls className="max-w-full max-h-[80vh] rounded-2xl shadow-2xl object-contain bg-black/50 pointer-events-auto" />
+                <video src={selectedMedia.src} autoPlay controls className="max-w-full max-h-[80vh] rounded-2xl shadow-xl md:shadow-2xl object-contain bg-black/50 pointer-events-auto" />
               ) : (
-                <img src={selectedMedia.src} alt={selectedMedia.title} className="max-w-full max-h-[80vh] rounded-2xl shadow-2xl object-contain bg-black/50 pointer-events-auto" />
+                <img src={selectedMedia.src} alt={selectedMedia.title} className="max-w-full max-h-[80vh] rounded-2xl shadow-xl md:shadow-2xl object-contain bg-black/50 pointer-events-auto" />
               )}
               <div className="mt-4 text-center pointer-events-auto">
                 <p className="text-white font-bold text-xl tracking-wide">{selectedMedia.title}</p>
