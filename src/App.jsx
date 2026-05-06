@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence, useScroll, useSpring, useInView, animate } from 'framer-motion';
 import { Menu, X, BookOpen, GraduationCap, Award, Phone, MapPin, Users, Mail, ChevronRight, Star, Quote, ArrowRight, ChevronDown, Atom, Activity, Heart } from 'lucide-react';
 
@@ -689,8 +690,9 @@ const HomeTutoring = () => {
         </div>
       </motion.div>
 
-      <AnimatePresence>
-        {isModalOpen && (
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {isModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="absolute inset-0 bg-slate-950/90 md:backdrop-blur-md" onClick={closeModal} />
@@ -699,11 +701,11 @@ const HomeTutoring = () => {
               initial={{ opacity: 0, scale: 0.85, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.85, y: 30 }}
               transition={{ type: 'spring', damping: 26, stiffness: 300 }}
-              className="relative w-full max-w-2xl z-10 overflow-hidden flex flex-col max-h-[92vh] rounded-[2rem] shadow-2xl border border-white/10"
+              className="relative w-full max-w-2xl z-10 overflow-hidden flex flex-col max-h-[92vh] rounded-[2rem] shadow-xl md:shadow-2xl border border-white/10 will-change-transform"
               style={{ background: 'linear-gradient(135deg, #0f172a 0%, #3f1e1e 50%, #0f172a 100%)' }}
             >
-              <div className="absolute top-0 left-0 w-64 h-64 bg-amber-500/10 blur-[80px] rounded-full pointer-events-none" />
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full pointer-events-none" />
+              <div className="hidden md:block absolute top-0 left-0 w-64 h-64 bg-amber-500/10 blur-[80px] rounded-full pointer-events-none" />
+              <div className="hidden md:block absolute bottom-0 right-0 w-64 h-64 bg-orange-500/10 blur-[80px] rounded-full pointer-events-none" />
 
               {/* Premium Header */}
               <div className="relative shrink-0 px-8 pt-7 pb-5 border-b border-white/10 bg-black/20">
@@ -809,7 +811,9 @@ const HomeTutoring = () => {
             </motion.div>
           </div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+    )}
     </div>
   );
 };
@@ -2083,7 +2087,7 @@ const PageLoader = () => {
 
 const Counsellor = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-slate-950">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-transparent">
       {/* Background Ambience */}
       <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
       <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-500/10 blur-[150px] rounded-[100%] pointer-events-none" />
