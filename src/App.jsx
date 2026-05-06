@@ -371,7 +371,7 @@ const Scholarship = () => {
         {isModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-md" onClick={closeModal} />
+              className="absolute inset-0 bg-slate-950/90 md:backdrop-blur-md" onClick={closeModal} />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.85, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -674,7 +674,7 @@ const HomeTutoring = () => {
         {isModalOpen && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-md" onClick={closeModal} />
+              className="absolute inset-0 bg-slate-950/90 md:backdrop-blur-md" onClick={closeModal} />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.85, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -803,7 +803,7 @@ const Courses = () => {
       title: "Pre Foundation",
       grades: "Class 6 to 10",
       description: "Building a strong base in Science and Mathematics to prepare young minds for future competitive challenges.",
-      icon: <BookOpen className="h-8 w-8 text-white" />,
+      icon: <BookOpen className="h-6 w-6 md:h-8 md:w-8 text-white" />,
       gradient: "from-blue-400 to-sky-400",
       shadowColor: "shadow-sky-500/20",
       textColor: "text-sky-500",
@@ -813,7 +813,7 @@ const Courses = () => {
       title: "Foundation & JEE",
       grades: "Class 11 to 12",
       description: "Rigorous curriculum focusing on deep conceptual understanding for JEE Mains and Advanced preparation.",
-      icon: <GraduationCap className="h-8 w-8 text-white" />,
+      icon: <GraduationCap className="h-6 w-6 md:h-8 md:w-8 text-white" />,
       gradient: "from-orange-400 to-red-400",
       shadowColor: "shadow-orange-500/20",
       textColor: "text-orange-500",
@@ -823,7 +823,7 @@ const Courses = () => {
       title: "Medical / NEET",
       grades: "Class 11 to 12 & Droppers",
       description: "Expert guidance in Physics, Chemistry, and Biology to crack NEET and secure admission to top medical colleges.",
-      icon: <Award className="h-8 w-8 text-white" />,
+      icon: <Award className="h-6 w-6 md:h-8 md:w-8 text-white" />,
       gradient: "from-emerald-400 to-teal-400",
       shadowColor: "shadow-emerald-500/20",
       textColor: "text-emerald-500",
@@ -839,7 +839,7 @@ const Courses = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Our Programs</h2>
-          <h2 className="text-4xl font-extrabold font-heading text-white mb-4">Premium <span className="text-gradient">Courses</span></h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white mb-4">Premium <span className="text-gradient">Courses</span></h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">Focused and structured learning pathways that help your child achieve top performance and career readiness.</p>
         </div>
 
@@ -851,26 +851,26 @@ const Courses = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white/5 backdrop-blur-md rounded-[2rem] p-8 relative overflow-hidden group transition-all duration-500 border border-white/10 shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-2 cursor-default`}
+              className={`bg-white/5 md:md:backdrop-blur-md rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 relative overflow-hidden group transition-all duration-500 border border-white/10 shadow-2xl hover:shadow-sky-500/10 hover:-translate-y-2 cursor-default`}
             >
               {/* Top Gradient Accent */}
               <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${course.gradient} transition-all duration-300 group-hover:h-2`}></div>
               
               {/* Background Decoration */}
-              <div className={`absolute -right-12 -top-12 w-40 h-40 bg-gradient-to-br ${course.gradient} rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`}></div>
+              <div className={`absolute -right-12 -top-12 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br ${course.gradient} rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`}></div>
               
               <div className="relative z-10">
-                <div className="flex items-center justify-between mb-8">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${course.gradient} shadow-lg shadow-black/20 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+                <div className="flex items-center justify-between mb-6 md:mb-8">
+                  <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl flex items-center justify-center bg-gradient-to-br ${course.gradient} shadow-lg shadow-black/20 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
                     {course.icon}
                   </div>
-                  <div className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase border border-white/10 bg-white/5 text-slate-300`}>
+                  <div className={`px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[9px] md:text-[10px] font-black tracking-widest uppercase border border-white/10 bg-white/5 text-slate-300`}>
                     {course.grades}
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-extrabold mb-4 text-white group-hover:text-sky-400 transition-colors">{course.title}</h3>
-                <p className="text-slate-400 leading-relaxed mb-8 font-medium min-h-[80px]">
+                <h3 className="text-xl md:text-2xl font-extrabold mb-3 md:mb-4 text-white group-hover:text-sky-400 transition-colors">{course.title}</h3>
+                <p className="text-slate-400 leading-relaxed mb-6 md:mb-8 font-medium text-sm md:text-base md:min-h-[80px]">
                   {course.description}
                 </p>
                 
@@ -899,7 +899,7 @@ const Courses = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
           >
-            <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-md" onClick={() => setSelectedCourse(null)}></div>
+            <div className="absolute inset-0 bg-slate-950/80 md:backdrop-blur-md" onClick={() => setSelectedCourse(null)}></div>
             <motion.div
               initial={{ scale: 0.95, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -1002,17 +1002,17 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">About Us</h2>
-            <h2 className="text-4xl font-extrabold font-heading text-white mb-6">Welcome to <span className="text-gradient">शिक्षा-Window</span></h2>
-            <p className="text-slate-300 text-lg mb-4 leading-relaxed font-medium">
+            <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white mb-6">Welcome to <span className="text-gradient whitespace-nowrap">शिक्षा-Window</span></h2>
+            <p className="text-slate-300 text-base sm:text-lg mb-4 leading-relaxed font-medium">
               <span className="font-bold text-sky-400">शिक्षा-Window</span> is a premier educational institute with over 16 years of proven excellence in academic coaching and student success. We take pride in consistently producing top achievers, including selections in IIT, NIT, NDA, and other prestigious institutions.
             </p>
-            <p className="text-slate-300 text-lg mb-4 leading-relaxed font-medium">
+            <p className="text-slate-300 text-base sm:text-lg mb-4 leading-relaxed font-medium">
               Our foundation is built on a passion for teaching. We are educators by choice, committed to delivering high-quality guidance, conceptual clarity, and result-oriented learning.
             </p>
-            <p className="text-slate-300 text-lg mb-4 leading-relaxed font-medium">
+            <p className="text-slate-300 text-base sm:text-lg mb-4 leading-relaxed font-medium">
               Beyond India, we also support and mentor students from the United States, the United Kingdom, Canada, and other countries, offering personalized academic guidance aligned with global standards.
             </p>
-            <p className="text-slate-100 text-xl mb-8 leading-relaxed font-bold italic border-l-4 border-sky-500 pl-4 py-2 bg-white/5 rounded-r-2xl border-t border-b border-r border-white/5">
+            <p className="text-slate-100 text-lg sm:text-xl mb-8 leading-relaxed font-bold italic border-l-4 border-sky-500 pl-4 py-2 bg-white/5 rounded-r-2xl border-t border-b border-r border-white/5">
               At शिक्षा-Window, we don’t just teach—we build futures.
             </p>
             
@@ -1036,7 +1036,7 @@ const About = () => {
             className="relative"
           >
             <div className="absolute inset-0 bg-sky-500/10 blur-[80px] rounded-full"></div>
-            <div className="bg-white/5 p-8 rounded-3xl relative z-10 border border-white/10 shadow-2xl backdrop-blur-md">
+            <div className="bg-white/5 p-8 rounded-3xl relative z-10 border border-white/10 shadow-2xl md:backdrop-blur-md">
               <div className="flex flex-col items-center text-center">
                 <div className="w-48 h-48 rounded-[2rem] overflow-hidden mb-6 border-4 border-sky-500/30 bg-slate-800 flex items-center justify-center shadow-lg shadow-sky-500/20">
                   <img src={amitPhoto} alt="Amit Lal - Director" className="w-full h-full object-cover grayscale-[0.2] brightness-110" onError={(e) => {
@@ -1146,7 +1146,7 @@ const Faculties = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Our Mentors</h2>
-          <h2 className="text-4xl font-extrabold font-heading text-white mb-4">Expert <span className="text-gradient">Faculties</span></h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white mb-4">Expert <span className="text-gradient">Faculties</span></h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">Learn from dedicated professionals with years of experience in their respective fields.</p>
         </div>
 
@@ -1158,12 +1158,12 @@ const Faculties = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex flex-col sm:flex-row bg-white/5 backdrop-blur-md rounded-[2.5rem] p-6 sm:p-8 relative overflow-hidden group transition-all duration-500 border border-white/10 shadow-2xl hover:shadow-sky-500/10 hover:border-sky-500/30 items-center sm:items-start gap-8"
+              className="flex flex-row bg-white/5 md:backdrop-blur-md rounded-[1.5rem] sm:rounded-[2.5rem] p-4 sm:p-8 relative overflow-hidden group transition-all duration-500 border border-white/10 shadow-2xl hover:shadow-sky-500/10 hover:border-sky-500/30 items-start gap-4 sm:gap-8"
             >
               {/* Decorative accent */}
               <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-sky-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <div className="w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-[2rem] overflow-hidden border-4 border-white/5 shadow-2xl bg-slate-800 relative group-hover:border-sky-500/30 group-hover:shadow-sky-500/20 transition-all duration-500">
+              <div className="w-24 h-24 sm:w-56 sm:h-56 shrink-0 rounded-2xl sm:rounded-[2rem] overflow-hidden border-2 sm:border-4 border-white/5 shadow-2xl bg-slate-800 relative group-hover:border-sky-500/30 group-hover:shadow-sky-500/20 transition-all duration-500">
                 <div className="absolute inset-0 bg-sky-500/20 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500 z-10 pointer-events-none"></div>
                 <img 
                   src={faculty.image} 
@@ -1177,28 +1177,28 @@ const Faculties = () => {
                 />
               </div>
               
-              <div className="flex-1 w-full text-center sm:text-left flex flex-col">
-                <h3 className="text-3xl font-extrabold mb-1 text-white group-hover:text-sky-400 transition-colors">{faculty.name}</h3>
-                <p className="text-sky-400 font-bold mb-6 tracking-wide uppercase text-sm border-b border-white/10 pb-4 inline-block">{faculty.role}</p>
+              <div className="flex-1 w-full text-left flex flex-col min-w-0">
+                <h3 className="text-lg sm:text-3xl font-extrabold mb-1 text-white group-hover:text-sky-400 transition-colors truncate">{faculty.name}</h3>
+                <p className="text-sky-400 font-bold mb-3 sm:mb-6 tracking-wide uppercase text-[9px] sm:text-sm border-b border-white/10 pb-2 sm:pb-4 inline-block">{faculty.role}</p>
                 
-                <div className="flex flex-col gap-5 flex-1">
+                <div className="flex flex-col gap-3 sm:gap-5 flex-1">
                   <div>
-                    <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
-                      <Star className="w-4 h-4 text-emerald-400 shrink-0" />
-                      <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">Experience</span>
+                    <div className="flex items-center justify-start gap-1 sm:gap-2 mb-1 sm:mb-2">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 shrink-0" />
+                      <span className="text-[9px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Experience</span>
                     </div>
-                    <p className="text-white font-extrabold text-xl ml-0 sm:ml-6">{faculty.experience}</p>
+                    <p className="text-white font-extrabold text-xs sm:text-xl ml-4 sm:ml-6">{faculty.experience}</p>
                   </div>
                   
                   <div>
-                    <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
-                      <GraduationCap className="w-4 h-4 text-purple-400 shrink-0" />
-                      <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">Qualifications</span>
+                    <div className="flex items-center justify-start gap-1 sm:gap-2 mb-1 sm:mb-3">
+                      <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 shrink-0" />
+                      <span className="text-[9px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Qualifications</span>
                     </div>
-                    <ul className="list-none text-sm text-slate-300 font-medium space-y-2 text-left bg-black/20 p-4 rounded-2xl border border-white/5 shadow-inner">
+                    <ul className="list-none text-[10px] sm:text-sm text-slate-300 font-medium space-y-1 sm:space-y-2 text-left bg-black/20 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
                       {faculty.qualifications.map((q, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <ChevronRight className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-1.5 sm:gap-2">
+                          <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-sky-400 shrink-0 mt-0.5" />
                           <span className="hover:text-white transition-colors leading-tight">{q}</span>
                         </li>
                       ))}
@@ -1207,14 +1207,14 @@ const Faculties = () => {
                   
                   {faculty.highlights.length > 0 && (
                     <div>
-                      <div className="flex items-center justify-center sm:justify-start gap-2 mb-3">
-                        <Award className="w-4 h-4 text-orange-400 shrink-0" />
-                        <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">Highlights</span>
+                      <div className="flex items-center justify-start gap-1 sm:gap-2 mb-1 sm:mb-3">
+                        <Award className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 shrink-0" />
+                        <span className="text-[9px] sm:text-[11px] font-black text-slate-400 uppercase tracking-widest">Highlights</span>
                       </div>
-                      <ul className="list-none text-sm text-slate-300 font-medium space-y-2 text-left bg-black/20 p-4 rounded-2xl border border-white/5 shadow-inner">
+                      <ul className="list-none text-[10px] sm:text-sm text-slate-300 font-medium space-y-1 sm:space-y-2 text-left bg-black/20 p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-white/5 shadow-inner">
                         {faculty.highlights.map((h, i) => (
-                          <li key={i} className="flex items-start gap-2">
-                            <ChevronRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-1.5 sm:gap-2">
+                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 shrink-0 mt-0.5" />
                             <span className="hover:text-white transition-colors leading-tight">{h}</span>
                           </li>
                         ))}
@@ -1239,6 +1239,9 @@ const Achievements = () => {
   ];
 
   const toppers = [
+    { name: "Saket Kr. Sahu", achievement: "95%tile", context: "JEE Mains", photo: "/SAKET.png" },
+    { name: "Abhishek Kr. Mishra", achievement: "1st Topper", context: "Doranda College (2018), Currently Deputy Collector", photo: "/ABHISHEK.png" },
+    { name: "Roshni Mahto", achievement: "97 Marks in Math", context: "Class 10th", photo: "/ROSHNI.png" },
     { name: "Akash Kumar Sahu", achievement: "99 Marks in Maths", context: "Class 12th Board", photo: top1Photo },
     { name: "Ankit Kumar", achievement: "1st Topper 2020", context: "St. John", photo: top2Photo },
     { name: "Mithun Mandal", achievement: "1st Topper", context: "Gossner College, Ranchi 2018", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Mithun+Mandal&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
@@ -1257,7 +1260,7 @@ const Achievements = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Excellence</h2>
-          <h2 className="text-4xl font-extrabold font-heading text-white mb-4">Our <span className="text-gradient">Achievements</span></h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white mb-4">Our <span className="text-gradient">Achievements</span></h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">A legacy of excellence and consistent results in top competitive examinations.</p>
         </div>
 
@@ -1269,7 +1272,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-2xl backdrop-blur-md"
+              className="relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-2xl md:backdrop-blur-md"
             >
               {/* Internal Hover Glow */}
               <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -1304,7 +1307,7 @@ const Achievements = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center gap-5 sm:gap-6 bg-slate-900/40 border border-white/10 hover:border-sky-500/30 rounded-3xl p-4 sm:p-5 shadow-2xl transition-all duration-500 group backdrop-blur-md hover:-translate-y-1 hover:bg-slate-800/50"
+                className="flex items-center gap-5 sm:gap-6 bg-slate-900/40 border border-white/10 hover:border-sky-500/30 rounded-3xl p-4 sm:p-5 shadow-2xl transition-all duration-500 group md:backdrop-blur-md hover:-translate-y-1 hover:bg-slate-800/50"
               >
                 <div className="shrink-0 relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-white/10 group-hover:border-sky-400/50 transition-colors duration-500 shadow-xl shadow-black/50">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10 pointer-events-none opacity-60 group-hover:opacity-0 transition-opacity"></div>
@@ -1349,7 +1352,7 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-sky-400 uppercase tracking-widest mb-2">Student Voices</h2>
-          <h2 className="text-4xl font-extrabold font-heading text-white mb-4">Hear From Our <span className="text-gradient">Achievers</span></h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold font-heading text-white mb-4">Hear From Our <span className="text-gradient">Achievers</span></h2>
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">Real stories from real students whose lives and careers were transformed at शिक्षा-Window.</p>
         </div>
 
@@ -1361,7 +1364,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/5 p-4 sm:p-5 rounded-[2.5rem] shadow-2xl border border-white/10 group hover:border-white/20 hover:-translate-y-2 transition-all duration-500 backdrop-blur-md"
+              className="bg-white/5 p-4 sm:p-5 rounded-[2.5rem] shadow-2xl border border-white/10 group hover:border-white/20 hover:-translate-y-2 transition-all duration-500 md:backdrop-blur-md"
             >
               <div className="relative rounded-3xl overflow-hidden bg-slate-950 flex items-center justify-center mb-6 shadow-inner border border-white/5" style={{ aspectRatio: '16/9' }}>
                 <video 
@@ -1440,7 +1443,7 @@ const Gallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] shadow-2xl p-6 md:p-8"
+          className="bg-white/5 md:backdrop-blur-md border border-white/10 rounded-[2.5rem] shadow-2xl p-6 md:p-8"
         >
           {/* 2x2 Preview Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -1542,7 +1545,7 @@ const Gallery = () => {
             
             <button
               onClick={() => setSelectedMedia(null)}
-              className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors cursor-pointer text-white z-[210] shadow-lg backdrop-blur-md"
+              className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors cursor-pointer text-white z-[210] shadow-lg md:backdrop-blur-md"
             >
               <X className="h-6 w-6" />
             </button>
@@ -1960,7 +1963,7 @@ const FAQs = () => {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className={`rounded-2xl border-l-4 overflow-hidden transition-all duration-300 shadow-xl ${
                 openIndex === i
-                  ? `${faq.color} bg-white/10 backdrop-blur-md`
+                  ? `${faq.color} bg-white/10 md:backdrop-blur-md`
                   : 'border-l-white/10 bg-white/5 hover:border-l-sky-500/50'
               } border border-y-white/5 border-r-white/5`}
             >
@@ -2091,7 +2094,7 @@ const Counsellor = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-2xl text-center">
+                  <div className="bg-white/10 md:backdrop-blur-md border border-white/20 px-5 py-3 rounded-2xl text-center">
                     <h3 className="text-white font-extrabold text-xl mb-1">Ashish Kumar Sahoo</h3>
                     <p className="text-purple-300 font-bold text-sm">Student Counsellor</p>
                   </div>
