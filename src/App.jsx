@@ -1123,8 +1123,8 @@ const Faculties = () => {
       fallbackImage: "https://ui-avatars.com/api/?name=Bipin+Singh&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true"
     },
     {
-      name: "Amit Kumar Prajapati (Junior Wing)",
-      role: "Computer Faculty",
+      name: "Amit Kumar Prajapati",
+      role: "Junior Wing Faculty",
       experience: "4 Years",
       qualifications: [
         "B.C.A. in Computer Applications (General), Dr. Shyama Prasad Mukherjee University, Ranchi"
