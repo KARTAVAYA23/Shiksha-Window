@@ -1264,7 +1264,7 @@ const Achievements = () => {
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">A legacy of excellence and consistent results in top competitive examinations.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-2 sm:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -1272,19 +1272,19 @@ const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-2xl md:backdrop-blur-md"
+              className="relative p-3 sm:p-8 md:p-10 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] text-center transition-all duration-500 group overflow-hidden bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-2 shadow-lg sm:shadow-2xl md:backdrop-blur-md"
             >
               {/* Internal Hover Glow */}
-              <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               
-              <div className="relative z-10">
-                <div className="inline-flex items-center justify-center w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 group-hover:border-sky-400/50 text-sky-400 mb-6 md:mb-8 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.2)] group-hover:scale-110">
+              <div className="relative z-10 flex flex-col items-center justify-center">
+                <div className="inline-flex items-center justify-center w-8 h-8 sm:w-16 sm:h-16 md:w-24 md:h-24 rounded-lg sm:rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 group-hover:border-sky-400/50 text-sky-400 mb-2 sm:mb-6 md:mb-8 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.2)] group-hover:scale-110">
                   {stat.icon}
                 </div>
-                <div className="text-5xl md:text-6xl font-extrabold font-heading mb-2 md:mb-3 text-white group-hover:text-sky-400 transition-all duration-500">
+                <div className="text-2xl sm:text-5xl md:text-6xl font-extrabold font-heading mb-1 sm:mb-2 md:mb-3 text-white group-hover:text-sky-400 transition-all duration-500">
                   {stat.value}
                 </div>
-                <div className="text-slate-400 group-hover:text-sky-400 font-bold uppercase tracking-widest md:tracking-[0.2em] text-xs transition-colors duration-500">
+                <div className="text-slate-400 group-hover:text-sky-400 font-bold uppercase tracking-tighter sm:tracking-widest md:tracking-[0.2em] text-[8px] sm:text-xs transition-colors duration-500 leading-tight">
                   {stat.title}
                 </div>
               </div>
@@ -1356,7 +1356,7 @@ const Testimonials = () => {
           <p className="text-slate-400 max-w-2xl mx-auto font-medium">Real stories from real students whose lives and careers were transformed at शिक्षा-Window.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
           {testimonials.map((testi, index) => (
             <motion.div
               key={index}
@@ -1364,21 +1364,22 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/5 p-4 sm:p-5 rounded-[2.5rem] shadow-2xl border border-white/10 group hover:border-white/20 hover:-translate-y-2 transition-all duration-500 md:backdrop-blur-md"
+              className="bg-white/5 p-4 sm:p-5 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl sm:shadow-2xl border border-white/10 group hover:border-white/20 hover:-translate-y-2 transition-all duration-500 md:backdrop-blur-md"
             >
-              <div className="relative rounded-3xl overflow-hidden bg-slate-950 flex items-center justify-center mb-6 shadow-inner border border-white/5" style={{ aspectRatio: '16/9' }}>
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 flex items-center justify-center mb-4 sm:mb-6 shadow-inner border border-white/5" style={{ aspectRatio: '16/9' }}>
                 <video 
                   src={`./${testi.src}`}
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="none"
+                  loading="lazy"
                   className="w-full h-full object-contain brightness-110"
                 />
               </div>
-              <div className="px-3 pb-2">
-                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">{testi.name}</h3>
+              <div className="px-2 sm:px-3 pb-1 sm:pb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">{testi.name}</h3>
                 {testi.details && (
-                  <p className="text-sky-400 font-extrabold tracking-wide uppercase text-xs">{testi.details}</p>
+                  <p className="text-sky-400 font-extrabold tracking-wide uppercase text-[10px] sm:text-xs">{testi.details}</p>
                 )}
               </div>
             </motion.div>
@@ -1950,7 +1951,7 @@ const FAQs = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block bg-sky-500/10 text-sky-400 font-bold text-xs px-5 py-2 rounded-full uppercase tracking-widest mb-4 border border-sky-400/20">Have Questions?</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-white mb-4">Frequently Asked <span className="text-gradient">Questions</span></h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold font-heading text-white mb-4">Frequently Asked <span className="text-gradient">Questions</span></h2>
           <p className="text-slate-400 font-medium text-lg max-w-xl mx-auto">Everything you need to know about admissions, classes, and facilities.</p>
         </div>
         <div className="space-y-4">
@@ -1961,7 +1962,7 @@ const FAQs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`rounded-2xl border-l-4 overflow-hidden transition-all duration-300 shadow-xl ${
+              className={`rounded-xl sm:rounded-2xl border-l-4 overflow-hidden transition-all duration-300 shadow-md sm:shadow-xl ${
                 openIndex === i
                   ? `${faq.color} bg-white/10 md:backdrop-blur-md`
                   : 'border-l-white/10 bg-white/5 hover:border-l-sky-500/50'
@@ -1969,15 +1970,15 @@ const FAQs = () => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                className="w-full text-left px-6 py-6 flex items-center gap-4 focus:outline-none cursor-pointer group"
+                className="w-full text-left px-4 py-4 sm:px-6 sm:py-6 flex items-center gap-3 sm:gap-4 focus:outline-none cursor-pointer group"
               >
-                <div className={`w-2.5 h-2.5 rounded-full shrink-0 transition-all duration-300 ${openIndex === i ? faq.dot : 'bg-slate-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]'}`} />
-                <span className={`font-bold text-base md:text-lg flex-1 transition-colors ${openIndex === i ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{faq.q}</span>
-                <ChevronDown className={`h-6 w-6 shrink-0 transition-transform duration-500 ${openIndex === i ? 'rotate-180 text-sky-400' : 'text-slate-500'}`} />
+                <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full shrink-0 transition-all duration-300 ${openIndex === i ? faq.dot : 'bg-slate-600 shadow-[0_0_10px_rgba(255,255,255,0.1)]'}`} />
+                <span className={`font-bold text-sm sm:text-base md:text-lg flex-1 transition-colors ${openIndex === i ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>{faq.q}</span>
+                <ChevronDown className={`h-5 w-5 sm:h-6 sm:w-6 shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180 text-sky-400' : 'text-slate-500'}`} />
               </button>
-              <div className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${openIndex === i ? 'max-h-64 pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="pl-6 border-l border-white/10 py-2">
-                  <p className="text-slate-400 font-medium leading-relaxed">{faq.a}</p>
+              <div className={`px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === i ? 'max-h-64 pb-4 sm:pb-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="pl-4 sm:pl-6 border-l border-white/10 py-1 sm:py-2">
+                  <p className="text-slate-400 text-xs sm:text-sm md:text-base font-medium leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             </motion.div>
@@ -2062,7 +2063,7 @@ const Counsellor = () => {
           <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-400 font-bold text-xs px-4 py-2 rounded-full uppercase tracking-widest mb-4 border border-purple-500/20">
             <Heart className="h-4 w-4" /> Student Support
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold font-heading text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold font-heading text-white mb-4">
             Mental <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400">Well-being</span>
           </h2>
           <p className="text-slate-400 font-medium text-lg max-w-2xl mx-auto">
@@ -2075,7 +2076,7 @@ const Counsellor = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-slate-900/50 border border-white/10 rounded-[3rem] p-6 sm:p-10 shadow-2xl backdrop-blur-xl relative group overflow-hidden"
+          className="bg-slate-900/50 border border-white/10 rounded-[2rem] sm:rounded-[3rem] p-5 sm:p-10 shadow-2xl md:backdrop-blur-xl relative group overflow-hidden"
         >
           {/* Inner Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-sky-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -2084,8 +2085,8 @@ const Counsellor = () => {
             
             {/* Image Section */}
             <div className="md:col-span-5 relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500 to-sky-500 rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
-              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl bg-slate-800">
+              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500 to-sky-500 rounded-2xl sm:rounded-[2.5rem] blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none"></div>
+              <div className="relative aspect-[4/5] rounded-2xl sm:rounded-[2.5rem] overflow-hidden border border-white/20 shadow-2xl bg-slate-800">
                 <img 
                   src={ashishPhoto} 
                   alt="Ashish Kumar Sahoo" 
@@ -2093,10 +2094,10 @@ const Counsellor = () => {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/10 md:backdrop-blur-md border border-white/20 px-5 py-3 rounded-2xl text-center">
-                    <h3 className="text-white font-extrabold text-xl mb-1">Ashish Kumar Sahoo</h3>
-                    <p className="text-purple-300 font-bold text-sm">Student Counsellor</p>
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                  <div className="bg-white/10 md:backdrop-blur-md border border-white/20 px-3 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl text-center">
+                    <h3 className="text-white font-extrabold text-lg sm:text-xl mb-0.5 sm:mb-1">Ashish Kumar Sahoo</h3>
+                    <p className="text-purple-300 font-bold text-[11px] sm:text-sm">Student Counsellor</p>
                   </div>
                 </div>
               </div>
@@ -2105,44 +2106,44 @@ const Counsellor = () => {
             {/* Content Section */}
             <div className="md:col-span-7">
               <div className="flex flex-wrap gap-4 mb-6">
-                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-sm shadow-inner flex-1 min-w-[200px]">
+                <div className="bg-white/5 border border-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl md:backdrop-blur-sm shadow-inner flex-1 min-w-[200px]">
                   <div className="flex items-center gap-3">
-                    <div className="bg-purple-500/20 p-2.5 rounded-xl">
-                      <GraduationCap className="h-5 w-5 text-purple-400" />
+                    <div className="bg-purple-500/20 p-2 sm:p-2.5 rounded-xl">
+                      <GraduationCap className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Qualifications</p>
-                      <p className="text-white font-bold text-sm leading-tight mt-1">Student Counsellor</p>
-                      <p className="text-white font-bold text-sm leading-tight mt-1">Post 🎓 Graduate In Psychology</p>
-                      <p className="text-white font-bold text-sm leading-tight mt-1">Pursuing M.phill (RINPAS)</p>
+                      <p className="text-[9px] sm:text-[10px] text-slate-400 font-black uppercase tracking-widest mb-1">Qualifications</p>
+                      <p className="text-white font-bold text-xs sm:text-sm leading-tight mt-1">Student Counsellor</p>
+                      <p className="text-white font-bold text-xs sm:text-sm leading-tight mt-1">Post 🎓 Graduate In Psychology</p>
+                      <p className="text-white font-bold text-xs sm:text-sm leading-tight mt-1">Pursuing M.phill (RINPAS)</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-white/5 border border-white/10 p-4 rounded-2xl backdrop-blur-sm shadow-inner flex-1 min-w-[150px]">
+                <div className="bg-white/5 border border-white/10 p-3 sm:p-4 rounded-xl sm:rounded-2xl md:backdrop-blur-sm shadow-inner flex-1 min-w-[150px]">
                   <div className="flex items-center gap-3">
-                    <div className="bg-sky-500/20 p-2.5 rounded-xl">
-                      <Star className="h-5 w-5 text-sky-400" />
+                    <div className="bg-sky-500/20 p-2 sm:p-2.5 rounded-xl">
+                      <Star className="h-4 w-4 sm:h-5 sm:w-5 text-sky-400" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest">Experience</p>
-                      <p className="text-white font-bold text-base">5 Years</p>
+                      <p className="text-[9px] sm:text-[10px] text-slate-400 font-black uppercase tracking-widest">Experience</p>
+                      <p className="text-white font-bold text-sm sm:text-base">5 Years</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mb-6 border-l-4 border-purple-500 pl-5 py-2 bg-gradient-to-r from-purple-500/10 to-transparent rounded-r-2xl">
-                <p className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-300 italic tracking-wide">
+              <div className="mb-6 border-l-4 border-purple-500 pl-4 sm:pl-5 py-2 bg-gradient-to-r from-purple-500/10 to-transparent rounded-r-2xl">
+                <p className="text-lg md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-300 italic tracking-wide">
                   "Mental health should be priority"
                 </p>
               </div>
 
-              <h4 className="text-3xl font-extrabold text-white mb-6 font-heading leading-tight">
+              <h4 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 sm:mb-6 font-heading leading-tight">
                 Empowering Students to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400">Overcome Challenges</span>
               </h4>
               
-              <div className="space-y-4 text-slate-300 font-medium text-lg leading-relaxed mb-8 text-justify md:text-left">
+              <div className="space-y-4 text-slate-300 font-medium text-sm sm:text-lg leading-relaxed mb-8 text-left">
                 <p>
                   At Shiksha Window, we understand that competitive exam preparation can be overwhelming. Ashish Kumar Sahoo, our expert Student Counsellor, is dedicated to supporting the psychological and emotional well-being of our students.
                 </p>
