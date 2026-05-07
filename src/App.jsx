@@ -1363,7 +1363,7 @@ const Achievements = () => {
 
 const Testimonials = () => {
   const testimonials = [
-    { src: 'T1.mp4', name: 'Krishna', details: 'From NDA to PhD' },
+    { src: 'T1.mp4', name: 'Krishnakant Saha', details: 'From NDA to PhD' },
     { src: 'T2.mp4', name: 'Sagar Kr. Mahto', details: 'Pursuing B.Tech in Aerospace Engineering from SRM University' },
     { src: 'T3.mp4', name: 'Abhishek Mishra', details: 'Proud Achiever' },
     { src: 'T4.mp4', name: 'Akash Kumar Sahu', details: 'Outstanding Performance' },
