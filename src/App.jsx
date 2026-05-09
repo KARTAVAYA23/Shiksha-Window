@@ -57,6 +57,8 @@ import top1Photo from './assets/top1.png';
 import top2Photo from './assets/top2.png';
 import amitPrajapatiPhoto from './assets/Amit Kumar Prajapati.png';
 import ashishPhoto from './assets/Ashish Kumar Sahoo.png';
+import lakshmiPhoto from './assets/Lakshmi Narayan Das.png';
+import mithunPhoto from './assets/Mithun Mandal.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -1273,8 +1275,8 @@ const Achievements = () => {
     { name: "Roshni Mahto", achievement: "97 Marks in Math", context: "Class 10th", photo: "/ROSHNI.png" },
     { name: "Akash Kumar Sahu", achievement: "99 Marks in Maths", context: "Class 12th Board", photo: top1Photo },
     { name: "Ankit Kumar", achievement: "1st Topper 2020", context: "St. John", photo: top2Photo },
-    { name: "Mithun Mandal", achievement: "1st Topper", context: "Gossner College, Ranchi 2018", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Mithun+Mandal&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
-    { name: "Lakshmi Narayan Das", achievement: "2nd Topper", context: "Gossner College, Ranchi 2018", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Lakshmi+Narayan+Das&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
+    { name: "Mithun Mandal", achievement: "1st Topper", context: "Gossner College, Ranchi 2018", photo: mithunPhoto, fallbackImage: "https://ui-avatars.com/api/?name=Mithun+Mandal&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
+    { name: "Lakshmi Narayan Das", achievement: "2nd Topper", context: "Gossner College, Ranchi 2018", photo: lakshmiPhoto, fallbackImage: "https://ui-avatars.com/api/?name=Lakshmi+Narayan+Das&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
     { name: "Vartika Kumari", achievement: "1st Topper", context: "Ursuline Inter College, 2018", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Vartika+Kumari&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
     { name: "Khushi Kumari Mahto", achievement: "95 Marks", context: "Mathematics", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Khushi+Kumari+Mahto&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" },
     { name: "Adil Raza", achievement: "1st Topper", context: "Doranda College, Ranchi 2023", photo: null, fallbackImage: "https://ui-avatars.com/api/?name=Adil+Raza&background=0ea5e9&color=fff&size=256&font-size=0.33&bold=true" }
